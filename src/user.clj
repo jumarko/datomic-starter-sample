@@ -94,6 +94,9 @@
   ;; => #{["Commando"] ["The Goonies"]}
 
   ;; ... and get all the attributes for 1985 movies
+  ;; notice that using `?e` logical variable "unifies"
+  ;; the records so it effectively works like AND
+  ;; - if we used _ instead of ?e we would get OR-like behavior
   (def all-data-from-1985 '[:find ?title ?year ?genre
                             :where [?e :movie/title ?title]
                                    [?e :movie/release-year ?year]
