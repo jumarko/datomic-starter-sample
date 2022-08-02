@@ -1,5 +1,9 @@
-{:paths ["src"]
+{:paths ["src"
+         "src/resources"]
  :deps {;; https://docs.datomic.com/on-prem/peer/integrating-peer-lib.html
         com.datomic/datomic-pro {:mvn/version "1.0.6397"}
+        ;; + datomic client library: api: https://docs.datomic.com/on-prem/client/integrating-client-lib.html
+        com.datomic/client-pro {:mvn/version "1.0.75"}
+
         ;; for easy logging to stdout https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
         org.slf4j/slf4j-simple {:mvn/version "1.7.36"}}}

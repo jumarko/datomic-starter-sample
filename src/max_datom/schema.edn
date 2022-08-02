@@ -1,0 +1,62 @@
+;; :db/id  attributes are commented out because it's not common to see this elsewhere
+;; and also because it doesn't work:
+      ;; 1. Caused by datomic.impl.Exceptions$IllegalArgumentExceptionInfo
+      ;; :db.error/not-an-entity Unable to resolve entity: :book/id in datom [":book/id" :db/ident
+      ;;                                                                      :book/id]
+      ;; {:cognitect.anomalies/category :cognitect.anomalies/incorrect,
+      ;;  :cognitect.anomalies/message
+      ;;  "Unable to resolve entity: :book/id in datom [\":book/id\" :db/ident :book/id]",
+      ;;  :entity ":book/id",
+      ;;  :datom [":book/id" :db/ident :book/id],
+      ;;  :db/error :db.error/not-an-entity}
+[{;;:db/id ":book/id"
+  :db/ident :book/id
+  :db/valueType {:db/ident :db.type/uuid}
+  :db/cardinality {:db/ident :db.cardinality/one}
+  :db/unique {:db/ident :db.unique/identity}}
+ {;;:db/id ":book/name"
+  :db/ident :book/name
+  :db/valueType {:db/ident :db.type/string}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":book/author"
+  :db/ident :book/author
+  :db/valueType {:db/ident :db.type/ref}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":book/publication-date"
+  :db/ident :book/publication-date
+  :db/valueType {:db/ident :db.type/instant}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":book/clearance"
+  :db/ident :book/clearance
+  :db/valueType {:db/ident :db.type/boolean}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":book/weekly-special"
+  :db/ident :book/weekly-special
+  :db/valueType {:db/ident :db.type/boolean}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":book/name+author"
+  :db/ident :book/name+author
+  :db/valueType {:db/ident :db.type/tuple}
+  :db/cardinality {:db/ident :db.cardinality/one}
+  :db/unique {:db/ident :db.unique/identity}
+  :db/tupleAttrs [:book/id :book/name]}
+
+{;;:db/id ":author/id"
+ :db/ident :author/id
+ :db/valueType {:db/ident :db.type/uuid}
+ :db/cardinality {:db/ident :db.cardinality/one}
+ :db/unique {:db/ident :db.unique/identity}}
+ {;;:db/id ":author/first-name"
+  :db/ident :author/first-name
+  :db/valueType {:db/ident :db.type/string}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":author/last-name"
+  :db/ident :author/last-name
+  :db/valueType {:db/ident :db.type/string}
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":author/first+last-name"
+  :db/ident :author/first+last-name
+  :db/valueType {:db/ident :db.type/tuple}
+  :db/cardinality {:db/ident :db.cardinality/one}
+  :db/unique {:db/ident :db.unique/identity}
+  :db/tupleAttrs [:author/first-name :author/last-name]}]
