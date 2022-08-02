@@ -9,8 +9,7 @@
   ;; this fails because if we don't have any data in the db yet (see data.edn)
   (d/q '[:find ?v
          :where [_ :author/first+last-name ?v]]
-       @db)
-  ;; => #{[["Miguel" "Dvd Rom"]]}
+       (db))
   .)
 
 
