@@ -1,0 +1,60 @@
+[
+ ;; books
+ {:db/id "book_1"
+  ;; Tip: use (random-uuid) and `, e w` (cider-eval-last-sexp-and-replace)
+  :book/id #uuid "8ae7232c-47d8-4a53-91a8-f2e62a1dc2fc"
+  :book/name "Book 1"
+  :book/author "author_1"
+  :book/publication-date #inst "2022-08-02"
+  :book/clearance true
+  :book/weekly-special true
+  :book/name+author ["Book 1" "Miguel"]}
+
+ ;; authors
+ {:db/id "author_1"
+  :author/id #uuid "ee13d1f3-1c41-4f42-81b2-cf8844daebd6"
+  :author/first-name "Miguel"
+  :author/last-name "Dvd Rom"
+  :author/first+last-name ["Miguel" "Dvd Rom"]}
+ {:db/id "author_2"
+  :author/id #uuid "3ad66c9b-206b-4074-8905-6bd482f076df"
+  :author/first-name "J. R."
+  :author/last-name "Token"
+  :author/first+last-name ["J.R." "Token"]}
+ {:db/id "author_3"
+  :author/id #uuid "f7f2856d-e5c3-4974-9a38-c68bad184c9f"
+  :author/first-name "E. L."
+  :author/last-name "Mainframe"
+  :author/first+last-name ["E. L." "Mainframe"]}
+ {:db/id "author_4"
+  :author/id #uuid "230a4ccb-cfc0-4d15-b4df-d262a68e490e"
+  :author/first-name "Charles"
+  :author/last-name "Diskens"
+  :author/first+last-name ["Charles" "Diskens"]}
+ {:db/id "author_5"
+  :author/id #uuid "bf5d99e3-71c1-46a7-a4ca-96ff2b3cf443"
+  :author/first-name "Perry"
+  :author/last-name "Farrell"
+  :author/first+last-name ["Perry" "Farrell"]}
+ {:db/id "author_6"
+  :author/id #uuid "d2f1a47f-b5ee-4301-ab90-c1b94f84d58b"
+  :author/first-name "Miles"
+  :author/last-name "Dyson"
+  :author/first+last-name ["Miles" "Dyson"]}
+ {:db/id "author_7"
+  :author/id #uuid "4eea4580-21b2-4a6a-9a88-ada7dc928968"
+  :author/first-name "Napoleon"
+  :author/last-name "Desktop"
+  :author/first+last-name ["Napoleon" "Desktop"]}
+ {:db/id "author_8"
+  :author/id #uuid "05b39fba-7af1-4ef6-891f-469a60fbc7ce"
+  :author/first-name "Segfault"
+  :author/last-name "Larsson"
+  :author/first+last-name ["Segfault" "Larsson"]}
+ {:db/id "author_9"
+  :author/id #uuid "ece113bb-1513-49a9-ad5c-5d3d1e1e4d1c"
+  :author/first-name "Kim"
+  :author/last-name "K"
+  :author/first+last-name ["Kim" "K"]}
+
+ ]
