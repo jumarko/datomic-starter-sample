@@ -30,12 +30,12 @@
   :db/ident :book/clearance
   :db/valueType {:db/ident :db.type/boolean}
   :db/cardinality {:db/ident :db.cardinality/one}}
- {;;:db/id ":book/weekly-special"
-  :db/ident :book/weekly-special
+ {;;:db/id ":book/bestseller"
+  :db/ident :book/bestseller
   :db/valueType {:db/ident :db.type/boolean}
   :db/cardinality {:db/ident :db.cardinality/one}}
- {;;:db/id ":book/name+author"
-  :db/ident :book/name+author
+ {;;:db/id ":book/id+name"
+  :db/ident :book/id+name
   :db/valueType {:db/ident :db.type/tuple}
   :db/cardinality {:db/ident :db.cardinality/one}
   :db/unique {:db/ident :db.unique/identity}

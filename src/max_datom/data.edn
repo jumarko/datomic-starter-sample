@@ -1,60 +1,146 @@
+;; books and authors fetched in level 5 (https://max-datom.com/#/FE78C28B-3759-4AA1-94A0-CC8057D2255A)
+;; through datomic pull syntax:
+;;    (d/q '[:find (pull ?e [*])
+;;           :where [?e :book/author]] db)
+;; and
+;;    (d/q '[:find (pull ?e [*])
+;;           :where [?e :author/first-name]] db)
 [
- ;; books
- {:db/id "book_1"
-  ;; Tip: use (random-uuid) and `, e w` (cider-eval-last-sexp-and-replace)
-  :book/id #uuid "8ae7232c-47d8-4a53-91a8-f2e62a1dc2fc"
-  :book/name "Book 1"
-  :book/author "author_1"
-  :book/publication-date #inst "2022-08-02"
-  :book/clearance true
-  :book/weekly-special true
-  :book/name+author ["Book 1" "Miguel"]}
+ ;;; books
+ {:db/id 87960930222173,
+  :book/id #uuid "2fd9f72e-5cab-4a63-91e9-2cc3fbfc5f91",
+  :book/name "Fifty Shades Of Transistors",
+  :book/author {:db/id 87960930222166},
+  :book/publication-date #inst "2032-02-15T00:00:00.000-00:00",
+  :book/bestseller true,
+  :book/id+name
+  [#uuid "2fd9f72e-5cab-4a63-91e9-2cc3fbfc5f91"
+   "Fifty Shades Of Transistors"]}
+ {:db/id 87960930222174,
+  :book/id #uuid "03db52ef-4ca3-4b1f-9fd0-7e8e91e9c4fc",
+  :book/name "The Processor with the Intel Tattoo",
+  :book/author {:db/id 87960930222167},
+  :book/publication-date #inst "2031-03-19T00:00:00.000-00:00",
+  :book/id+name
+  [#uuid "03db52ef-4ca3-4b1f-9fd0-7e8e91e9c4fc"
+   "The Processor with the Intel Tattoo"]}
+ {:db/id 87960930222175,
+  :book/id #uuid "e2dd6a28-7711-4422-bd75-4b615ab3404c",
+  :book/name "Process and Grow RAM",
+  :book/author {:db/id 87960930222168},
+  :book/publication-date #inst "2032-07-04T00:00:00.000-00:00",
+  :book/bestseller true,
+  :book/id+name
+  [#uuid "e2dd6a28-7711-4422-bd75-4b615ab3404c"
+   "Process and Grow RAM"]}
+ {:db/id 87960930222176,
+  :book/id #uuid "4bef608b-992a-44ca-9eb4-507bfdc4da11",
+  :book/name "Outwitting the Garbage Collector",
+  :book/author {:db/id 87960930222168},
+  :book/publication-date #inst "2033-04-07T00:00:00.000-00:00",
+  :book/bestseller true,
+  :book/id+name
+  [#uuid "4bef608b-992a-44ca-9eb4-507bfdc4da11"
+   "Outwitting the Garbage Collector"]}
+ {:db/id 87960930222177,
+  :book/id #uuid "f2321482-e370-482e-8fd2-f59b98fc860c",
+  :book/name "Lord Of The Pixels",
+  :book/author {:db/id 87960930222169},
+  :book/publication-date #inst "2031-05-21T00:00:00.000-00:00",
+  :book/id+name
+  [#uuid "f2321482-e370-482e-8fd2-f59b98fc860c"
+   "Lord Of The Pixels"]}
+ {:db/id 87960930222178,
+  :book/id #uuid "17de0457-4dd5-4558-8902-5db69ffdd049",
+  :book/name "A Tale Of Two Hard Drives",
+  :book/author {:db/id 87960930222170},
+  :book/publication-date #inst "2032-09-09T00:00:00.000-00:00",
+  :book/bestseller true,
+  :book/id+name
+  [#uuid "17de0457-4dd5-4558-8902-5db69ffdd049"
+   "A Tale Of Two Hard Drives"]}
+ {:db/id 87960930222179,
+  :book/id #uuid "1b7f9b67-0f50-431b-9ee8-f2960ee4b0a5",
+  :book/name "Don Quixobyte",
+  :book/author {:db/id 87960930222171},
+  :book/publication-date #inst "2031-10-31T00:00:00.000-00:00",
+  :book/id+name
+  [#uuid "1b7f9b67-0f50-431b-9ee8-f2960ee4b0a5" "Don Quixobyte"]}
+ {:db/id 87960930222180,
+  :book/id #uuid "48b9ac60-32a1-4360-a208-9b0402f12f5d",
+  :book/name "We Were Supposed To Know",
+  :book/author {:db/id 87960930222165},
+  :book/publication-date #inst "2032-12-24T00:00:00.000-00:00",
+  :book/id+name
+  [#uuid "48b9ac60-32a1-4360-a208-9b0402f12f5d"
+   "We Were Supposed To Know"]}
+ {:db/id 87960930222181,
+  :book/id #uuid "a027fd03-643b-41ee-b3d5-6adab32c229c",
+  :book/name
+  "We Make Great Pets. How rescuing a human could actually rescue you.",
+  :book/author {:db/id 87960930222172},
+  :book/publication-date #inst "2032-06-17T00:00:00.000-00:00",
+  :book/clearance true,
+  :book/id+name
+  [#uuid "a027fd03-643b-41ee-b3d5-6adab32c229c"
+   "We Make Great Pets. How rescuing a human could actually rescue you."]}
+ {:db/id 87960930222182,
+  :book/id #uuid "80de94e7-2c1e-4877-a6b8-8534ab536558",
+  :book/name
+  "Riches To Rags. How I learned to stop worrying and turn a giant wheel all day.",
+  :book/author {:db/id 87960930222164},
+  :book/publication-date #inst "2031-01-13T00:00:00.000-00:00",
+  :book/clearance true,
+  :book/id+name
+  [#uuid "80de94e7-2c1e-4877-a6b8-8534ab536558"
+   "Riches To Rags. How I learned to stop worrying and turn a giant wheel all day."]}
 
- ;; authors
- {:db/id "author_1"
-  :author/id #uuid "ee13d1f3-1c41-4f42-81b2-cf8844daebd6"
-  :author/first-name "Miguel"
-  :author/last-name "Dvd Rom"
-  :author/first+last-name ["Miguel" "Dvd Rom"]}
- {:db/id "author_2"
-  :author/id #uuid "3ad66c9b-206b-4074-8905-6bd482f076df"
-  :author/first-name "J. R."
-  :author/last-name "Token"
-  :author/first+last-name ["J.R." "Token"]}
- {:db/id "author_3"
-  :author/id #uuid "f7f2856d-e5c3-4974-9a38-c68bad184c9f"
-  :author/first-name "E. L."
-  :author/last-name "Mainframe"
-  :author/first+last-name ["E. L." "Mainframe"]}
- {:db/id "author_4"
-  :author/id #uuid "230a4ccb-cfc0-4d15-b4df-d262a68e490e"
-  :author/first-name "Charles"
-  :author/last-name "Diskens"
-  :author/first+last-name ["Charles" "Diskens"]}
- {:db/id "author_5"
-  :author/id #uuid "bf5d99e3-71c1-46a7-a4ca-96ff2b3cf443"
-  :author/first-name "Perry"
-  :author/last-name "Farrell"
-  :author/first+last-name ["Perry" "Farrell"]}
- {:db/id "author_6"
-  :author/id #uuid "d2f1a47f-b5ee-4301-ab90-c1b94f84d58b"
-  :author/first-name "Miles"
-  :author/last-name "Dyson"
-  :author/first+last-name ["Miles" "Dyson"]}
- {:db/id "author_7"
-  :author/id #uuid "4eea4580-21b2-4a6a-9a88-ada7dc928968"
-  :author/first-name "Napoleon"
-  :author/last-name "Desktop"
-  :author/first+last-name ["Napoleon" "Desktop"]}
- {:db/id "author_8"
-  :author/id #uuid "05b39fba-7af1-4ef6-891f-469a60fbc7ce"
-  :author/first-name "Segfault"
-  :author/last-name "Larsson"
-  :author/first+last-name ["Segfault" "Larsson"]}
- {:db/id "author_9"
-  :author/id #uuid "ece113bb-1513-49a9-ad5c-5d3d1e1e4d1c"
-  :author/first-name "Kim"
-  :author/last-name "K"
+
+ ;;; authors
+ {:db/id 87960930222164,
+  :author/id #uuid "77914148-e18c-4aa9-ac0c-87d652d09f00",
+  :author/first-name "Kim",
+  :author/last-name "K",
   :author/first+last-name ["Kim" "K"]}
+ {:db/id 87960930222165,
+  :author/id #uuid "8dd0f891-2a32-4d49-840b-0921766a58ba",
+  :author/first-name "Miles",
+  :author/last-name "Dyson",
+  :author/first+last-name ["Miles" "Dyson"]}
+ {:db/id 87960930222166,
+  :author/id #uuid "1b341635-be22-4acc-ae5b-d81d8b1b7678",
+  :author/first-name "E. L.",
+  :author/last-name "Mainframe",
+  :author/first+last-name ["E. L." "Mainframe"]}
+ {:db/id 87960930222167,
+  :author/id #uuid "0955edf7-ff8f-4ec2-afb2-380e7e5d48d7",
+  :author/first-name "Segfault",
+  :author/last-name "Larsson",
+  :author/first+last-name ["Segfault" "Larsson"]}
+ {:db/id 87960930222168,
+  :author/id #uuid "14e86acf-000b-463e-90cb-cea0927a97da",
+  :author/first-name "Napoleon",
+  :author/last-name "Desktop",
+  :author/first+last-name ["Napoleon" "Desktop"]}
+ {:db/id 87960930222169,
+  :author/id #uuid "bbc10120-7ff8-472a-9715-976ea3cba9af",
+  :author/first-name "J. R.",
+  :author/last-name "Token",
+  :author/first+last-name ["J. R." "Token"]}
+ {:db/id 87960930222170,
+  :author/id #uuid "35636b79-ee46-4447-8aa7-3f0fb351c45c",
+  :author/first-name "Charles",
+  :author/last-name "Diskens",
+  :author/first+last-name ["Charles" "Diskens"]}
+ {:db/id 87960930222171,
+  :author/id #uuid "b7761785-79f9-49fa-97af-13b4f5c2bcc2",
+  :author/first-name "Miguel",
+  :author/last-name "Dvd Rom",
+  :author/first+last-name ["Miguel" "Dvd Rom"]}
+ {:db/id 87960930222172,
+  :author/id #uuid "d084217c-ee64-4e1c-b8e5-5b4217cd8d94",
+  :author/first-name "Perry",
+  :author/last-name "Farrell",
+  :author/first+last-name ["Perry" "Farrell"]}
 
  ]
