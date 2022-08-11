@@ -1,0 +1,64 @@
+[{;;:db/id ":post/id"
+ :db/ident :post/id
+ :db/valueType {:db/ident :db.type/uuid}
+ :db/cardinality {:db/ident :db.cardinality/one}
+ :db/unique {:db/ident :db.unique/identity}}
+{;;:db/id ":post/author"
+ :db/ident :post/author
+ :db/valueType {:db/ident :db.type/ref}
+ :db/cardinality {:db/ident :db.cardinality/one}}
+{;;:db/id ":post/comments",
+ :db/ident :post/comments,
+ :db/valueType {:db/ident :db.type/ref},
+ :db/cardinality {:db/ident :db.cardinality/many}}
+{;;:db/id ":post/dislikes",
+ :db/ident :post/dislikes,
+ :db/valueType {:db/ident :db.type/ref},
+ :db/cardinality {:db/ident :db.cardinality/many}}
+{;;:db/id ":post/likes",
+ :db/ident :post/likes,
+ :db/valueType {:db/ident :db.type/ref},
+ :db/cardinality {:db/ident :db.cardinality/many}}
+{;;:db/id ":post/message-uri",
+ :db/ident :post/message-uri,
+ :db/doc "Long user posts are encouraged. As Datomic is not intended to store long strings posts are stored off site in a document repository.",
+ :db/valueType {:db/ident :db.type/string},
+ :db/cardinality {:db/ident :db.cardinality/one},
+ :db/unique {:db/ident :db.unique/identity}}
+ {;;:db/id ":user/id"
+  :db/ident :user/id
+  :db/valueType {:db/ident :db.type/uuid}
+  :db/cardinality {:db/ident :db.cardinality/one}
+  :db/unique {:db/ident :db.unique/identity}}
+{;;:db/id ":user/first-name",
+ :db/ident :user/first-name,
+ :db/valueType {:db/ident :db.type/string},
+ :db/cardinality {:db/ident :db.cardinality/one}}
+{;;:db/id ":user/last-name",
+ :db/ident :user/last-name,
+ :db/valueType {:db/ident :db.type/string},
+ :db/cardinality {:db/ident :db.cardinality/one}}
+{;;:db/id ":user/first+last-name",
+ :db/ident :user/first+last-name,
+ :db/valueType {:db/ident :db.type/tuple},
+ :db/cardinality {:db/ident :db.cardinality/one},
+ :db/unique {:db/ident :db.unique/identity},
+ :db/tupleAttrs [:user/first-name :user/last-name]}
+{;;:db/id ":group/id"
+ :db/ident :group/id
+ :db/valueType {:db/ident :db.type/uuid}
+ :db/cardinality {:db/ident :db.cardinality/one}
+ :db/unique {:db/ident :db.unique/identity}}
+{;;:db/id ":group/members",
+ :db/ident :group/members,
+ :db/valueType {:db/ident :db.type/ref},
+ :db/cardinality {:db/ident :db.cardinality/many}}
+{;;:db/id ":group/name",
+ :db/ident :group/name,
+ :db/valueType {:db/ident :db.type/string},
+ :db/cardinality {:db/ident :db.cardinality/one},
+ :db/unique {:db/ident :db.unique/identity}}
+{;;:db/id ":group/posts",
+ :db/ident :group/posts,
+ :db/valueType {:db/ident :db.type/ref},
+ :db/cardinality {:db/ident :db.cardinality/many}}]
