@@ -141,15 +141,13 @@
     [#uuid "2fd9f72e-5cab-4a63-91e9-2cc3fbfc5f91"]
     [#uuid "d15fbe75-0069-4395-b1b1-595b501e97d3"]}
 
-  ;; should I simply count post id instead of author??
-  (d/q '[:find  ?user-name (count ?post-id)
+  ;; should I simply count posts instead of author??
+  (d/q '[:find  ?user-name (count ?post)
          :where
          [?user :user/id #uuid "1B341635-BE22-4ACC-AE5B-D81D8B1B7678"]
          [?user :user/first+last-name ?user-name]
-         [?post :post/author ?user]
-         [?post :post/id ?post-id]
-         ]
+         [?post :post/author ?user]]
        (db))
-  ;; => [[["E. L." "Mainframe"] 3]]
+    ;; => [[["E. L." "Mainframe"] 3]]
 
   .)
