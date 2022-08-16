@@ -26,8 +26,11 @@
 ;; and a string "Comment Count: <count>" (for :post/comments)
 (comment
   (d/q '[:find  (pull ?posts [{:post/author [:user/first+last-name]}
-                              [:post/comments :xform comment-count-str]])
+                              [:post/comments :xform maxdatom.level-12/comment-count-str]])
          :where [?posts :post/author _]]
        (db))
-  
+  ;; => [[#:post{:author #:user{:first+last-name ["E. L." "Mainframe"]}, :comments "Comment Count: 3"}]
+  ;;     [#:post{:author #:user{:first+last-name ["E. L." "Mainframe"]}, :comments "Comment Count: 2"}]
+  ;;     [#:post{:author #:user{:first+last-name ["E. L." "Mainframe"]}, :comments "Comment Count: 0"}]
+  ;;     [#:post{:author #:user{:first+last-name ["Segfault" "Larsson"]}, :comments "Comment Count: 2"}]]
   .)
