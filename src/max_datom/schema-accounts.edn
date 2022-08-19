@@ -1,0 +1,30 @@
+[{;;:db/id ":account/id",
+  :db/ident :account/id,
+  :db/unique :db.unique/identity
+  :db/valueType {:db/ident :db.type/uuid},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":account/balance",
+  :db/ident :account/balance,
+  :db/valueType {:db/ident :db.type/long},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":account/owner",
+  :db/ident :account/owner,
+  :db/valueType {:db/ident :db.type/ref},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":transfer/id",
+  :db/ident :transfer/id,
+  :db/unique :db.unique/identity
+  :db/valueType {:db/ident :db.type/uuid},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":transfer/from",
+  :db/ident :transfer/from,
+  :db/valueType {:db/ident :db.type/ref},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":transfer/to",
+  :db/ident :transfer/to,
+  :db/valueType {:db/ident :db.type/ref},
+  :db/cardinality {:db/ident :db.cardinality/one}}
+ {;;:db/id ":transfer/amount",
+  :db/ident :transfer/amount,
+  :db/valueType {:db/ident :db.type/long},
+  :db/cardinality {:db/ident :db.cardinality/one}}]
