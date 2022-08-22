@@ -1,0 +1,33 @@
+[
+ ;; accounts
+ {:db/id 92358976733270,
+  :account/balance 57500,
+  :account/id #uuid "b7d83fb0-7ec8-4e7b-a4d8-02478f2dd5d6",
+  :account/owner {:db/id 92358976733267}}
+ {:db/id 92358976733271,
+  :account/balance 2300,
+  :account/id #uuid "d381dc80-c582-45eb-89e9-f6e188a71a29",
+  :account/owner {:db/id 92358976733268}}
+ {:db/id 92358976733272,
+  :account/balance 8900,
+  :account/id #uuid "5164b8da-2fe4-41da-a5fd-1a697be1d2dd",
+  :account/owner {:db/id 92358976733269}}
+
+ ;; transfers
+ {:db/id 92358976733273,
+  :transfer/from {:db/id 92358976733272},
+  :transfer/id #uuid "59b9c791-74ce-4c51-a4bc-ef6d06bee2db",
+  :transfer/to {:db/id 92358976733271},
+  :transfer/amount 1000}
+ {:db/id 92358976733274,
+  :transfer/from {:db/id 92358976733272},
+  :transfer/id #uuid "02125764-a1a3-4cb9-89da-7f5ef63816cd",
+  :transfer/to {:db/id 92358976733271},
+  :transfer/amount 850}
+ {:db/id 92358976733275,
+  :transfer/from {:db/id 92358976733272},
+  :transfer/id #uuid "52636794-d94a-44b8-8012-c719d7886e17",
+  :transfer/to {:db/id 92358976733271},
+  :transfer/amount 1200}
+
+ ]

@@ -24,6 +24,10 @@
   ;; transfers
   (d/q '[:find (pull ?e [*])
          :where [?e :transfer/id]] db)
+
+  (d/q '[:find (pull ?e [*])
+         :where [?e :user/id]] db)
+
 .)
 
 
@@ -40,6 +44,7 @@
 (comment
   (d/q '[:find  ?from
          :where [?transfer :transfer/id #uuid "4C5116AF-3B75-1FFE-AE5B-D81D8B1B251F"]
-         [?transfer :transfer/from ?from]] db)
+         [?transfer :transfer/from ?from]]
+       (db))
   .)
 
