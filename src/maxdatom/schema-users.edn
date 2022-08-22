@@ -25,6 +25,8 @@
  :db/valueType {:db/ident :db.type/string},
  :db/cardinality {:db/ident :db.cardinality/one},
  :db/unique {:db/ident :db.unique/identity}}
+
+ ;;; users
  {;;:db/id ":user/id"
   :db/ident :user/id
   :db/valueType {:db/ident :db.type/uuid}
@@ -44,6 +46,8 @@
  :db/cardinality {:db/ident :db.cardinality/one},
  :db/unique {:db/ident :db.unique/identity},
  :db/tupleAttrs [:user/first-name :user/last-name]}
+
+ ;;; groups
 {;;:db/id ":group/id"
  :db/ident :group/id
  :db/valueType {:db/ident :db.type/uuid}
