@@ -145,4 +145,10 @@
        :user/last-name "CD"}}, 
      :transfer/amount 1000}]]
 
+  ;; this (probably) demonstrates that there's no such entity in my db
+  ;; - otherwise it would return more data, not just id
+  ;; - see https://stackoverflow.com/questions/14189647/get-all-fields-from-a-datomic-entity
+  (d/touch (d/entity (db) 92358976733268))
+;; => #:db{:id 92358976733268}
+
   .)
