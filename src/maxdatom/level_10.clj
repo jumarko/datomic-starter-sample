@@ -9,7 +9,7 @@
 ;; first, load the new schema and data - they are now using 'user' entities
 (comment
   ;; transact schema
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/schema-users.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/schema-users.edn")))
 
   ;;; get the data via queries and store them in data-users.edn
 
@@ -102,7 +102,7 @@
    "https://s3.amazonaws.com/computer-conscience.com/top-trends/post81.txt"}]]
 
   ;;; add seed data
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/data-users.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/data-users.edn")))
 
   .)
 

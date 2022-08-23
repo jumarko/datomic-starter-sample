@@ -1,4 +1,4 @@
-(ns maxdatom.screening.level-1
+(ns maxdatom.level-1
   "See https://max-datom.com/#/9295D862-CAE9-455C-9485-67DBC8018BDF"
   (:require
    [datomic.api :as d]
