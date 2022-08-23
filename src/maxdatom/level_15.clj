@@ -97,13 +97,9 @@
 
 
 (comment
-  (d/q '[:find (pull ?transfer [*
-                                {:transfer/from [*]
-                                 :transfer/to [*]}])
+  (d/q '[:find (pull ?transfer [* {:transfer/from [*] :transfer/to [*]}])
          :in $ ?transfer-id
-         :where [?transfer :transfer/id ?transfer-id]
-                [?transfer :transfer/to ?to-account]
-                [?transfer :transfer/from ?from-account]]
+         :where [?transfer :transfer/id ?transfer-id]]
        (db) transfer-id)
     ;;=>
   [[{:db/id 92358976733273,
@@ -152,3 +148,4 @@
 ;; => #:db{:id 92358976733268}
 
   .)
+
