@@ -9,12 +9,14 @@
 ;; (def transfer-id #uuid "59B9C791-74CE-4C51-A4BC-EF6D06BEE2DBA")
 ;;=>   java.lang.IllegalArgumentException: UUID string too large
 
+(def transfer-id #uuid "59B9C791-74CE-4C51-A4BC-EF6D06BEE2DB")
+
 
 ;; Try again to load the new schema and data (accounts and transfers)
 ;; (it wasn't possible in the lesson 14)
 (comment
   ;; transact schema
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/schema-accounts.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/schema-accounts.edn")))
 
   ;;; get the data via queries and store them in data-users.edn
   ;; accounts - I had to pass transfer-id as input arg otherwise the web ui complained:
@@ -58,7 +60,7 @@
      :transfer/amount 1200}]]
 
   ;;; add seed data
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/data-accounts.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/data-accounts.edn")))
 
 .)
 
@@ -75,7 +77,6 @@
 
 ;; Pull all :transfer/from and :transfer/to data including :account/owner for a recently reported transfer
 ;; :transfer-id "59b9c791-74ce-4c51-a4bc-ef6d06bee2db"
-(def transfer-id #uuid "59b9c791-74ce-4c51-a4bc-ef6d06bee2db")
 (comment
   (d/q '[:find (pull ?transfer [*]
                      #_[:db/id
@@ -97,6 +98,8 @@
 
 
 (comment
+  ;; try a simple version:
+  ;; - notice it doesn't return any details about :account/owner
   (d/q '[:find (pull ?transfer [* {:transfer/from [*] :transfer/to [*]}])
          :in $ ?transfer-id
          :where [?transfer :transfer/id ?transfer-id]]
@@ -141,11 +144,43 @@
        :user/last-name "CD"}}, 
      :transfer/amount 1000}]]
 
-  ;; this (probably) demonstrates that there's no such entity in my db
-  ;; - otherwise it would return more data, not just id
+  ;; get the details about an entity (Muhammad)
   ;; - see https://stackoverflow.com/questions/14189647/get-all-fields-from-a-datomic-entity
   (d/touch (d/entity (db) 92358976733268))
-;; => #:db{:id 92358976733268}
+  ;;=>
+  {:db/id 92358976733268, :user/id #uuid "bfe00de4-bc19-4395-ba3b-2384ecf1a569", :user/first-name "Muhammad", :user/last-name "CD", :user/first+last-name ["Muhammad" "CD"]}
+
+
+  ;; now fixing my query:
+  (d/q '[:find (pull ?transfer [* {:transfer/from [* {:account/owner [*]}]
+                                   :transfer/to [* {:account/owner [*]}]}])
+         :in $ ?transfer-id
+         :where [?transfer :transfer/id ?transfer-id]]
+       (db) transfer-id)
+  ;;=>
+  [[{:db/id 92358976733273,
+     :transfer/id #uuid "59b9c791-74ce-4c51-a4bc-ef6d06bee2db",
+     :transfer/from
+     {:db/id 92358976733272,
+      :account/id #uuid "5164b8da-2fe4-41da-a5fd-1a697be1d2dd",
+      :account/balance 8900,
+      :account/owner
+      {:db/id 92358976733269,
+       :user/id #uuid "afb83133-3a2e-40ce-91f8-2de4f61361de",
+       :user/first-name "Sonny",
+       :user/last-name "Diskon",
+       :user/first+last-name ["Sonny" "Diskon"]}},
+     :transfer/to
+     {:db/id 92358976733271,
+      :account/id #uuid "d381dc80-c582-45eb-89e9-f6e188a71a29",
+      :account/balance 2300,
+      :account/owner
+      {:db/id 92358976733268,
+       :user/id #uuid "bfe00de4-bc19-4395-ba3b-2384ecf1a569",
+       :user/first-name "Muhammad",
+       :user/last-name "CD",
+       :user/first+last-name ["Muhammad" "CD"]}},
+     :transfer/amount 1000}]]
 
   .)
 

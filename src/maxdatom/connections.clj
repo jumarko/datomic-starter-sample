@@ -19,10 +19,10 @@
 
 
   ;; transact schema
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/schema.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/schema.edn")))
 
   ;; add seed data
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/data.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/data.edn")))
 
 
   .)

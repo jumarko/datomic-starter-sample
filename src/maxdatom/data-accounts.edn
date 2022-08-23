@@ -30,4 +30,14 @@
   :transfer/to {:db/id 92358976733271},
   :transfer/amount 1200}
 
+ ;; these two users are from results of the query in level-15
+ {:db/id 92358976733269,
+  :user/first-name "Sonny",
+  :user/id #uuid "afb83133-3a2e-40ce-91f8-2de4f61361de",
+  :user/last-name "Diskon"}
+ {:db/id 92358976733268,
+  :user/first-name "Muhammad",
+  :user/id #uuid "bfe00de4-bc19-4395-ba3b-2384ecf1a569",
+  :user/last-name "CD"}
+
  ]

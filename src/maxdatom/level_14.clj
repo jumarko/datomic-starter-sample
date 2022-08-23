@@ -15,7 +15,7 @@
 ;; (try again in the next lesson)
 (comment
   ;; transact schema
-  @(d/transact @conn (edn/read-string (slurp "src/max_datom/schema-accounts.edn")))
+  @(d/transact @conn (edn/read-string (slurp "src/maxdatom/schema-accounts.edn")))
 
   ;;; get the data via queries and store them in data-users.edn
   ;; accounts
