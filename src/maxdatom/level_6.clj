@@ -3,7 +3,7 @@
   See https://max-datom.com/#/32466EAD-9673-4D5B-9393-928B57926065
   and https://docs.datomic.com/cloud/query/query-pull.html#reverse-lookup"
   (:require
-   [max-datom.connections :refer [db]]
+   [maxdatom.connections :refer [db]]
    [datomic.api :as d]))
 
 ;; reverse navigation example with _

@@ -4,7 +4,7 @@
   "
   (:require
    [datomic.api :as d]
-   [max-datom.connections :refer [db]]))
+   [maxdatom.connections :refer [db]]))
 
 ;; the original query
 (comment

@@ -4,7 +4,7 @@
   (:require
    [clojure.edn :as edn]
    [datomic.api :as d]
-   [max-datom.connections :refer [conn db]]))
+   [maxdatom.connections :refer [conn db]]))
 
 ;; first, load the new schema and data - they are now using 'user' entities
 (comment

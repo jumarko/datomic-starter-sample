@@ -3,7 +3,7 @@
   (:require
    [clojure.edn :as edn]
    [datomic.api :as d]
-   [max-datom.connections :refer [conn db]]))
+   [maxdatom.connections :refer [conn db]]))
 
 ;; TODO: this is invalid UUID - it's 1 char longer than expected
 ;; (def transfer-id #uuid "59B9C791-74CE-4C51-A4BC-EF6D06BEE2DBA")

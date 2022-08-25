@@ -3,7 +3,7 @@
   See https://max-datom.com/#/D7AA2A52-E343-49A0-8560-742CA4849E9A
   "
   (:require
-   [max-datom.connections :refer [db]]
+   [maxdatom.connections :refer [db]]
    [datomic.api :as d]))
 
 

@@ -1,4 +1,4 @@
-(ns max-datom.connections
+(ns maxdatom.connections
   (:require
    [clojure.edn :as edn]
    [datomic.api :as d]))

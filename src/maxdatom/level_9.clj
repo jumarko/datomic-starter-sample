@@ -2,7 +2,7 @@
   "Collection binding: https://docs.datomic.com/cloud/query/query-data-reference.html#collection-binding
   https://max-datom.com/#/A20997ED-9303-40F0-9C08-B01E10178DC2."
   (:require
-   [max-datom.connections :refer [db]]
+   [maxdatom.connections :refer [db]]
    [datomic.api :as d]))
 
 
