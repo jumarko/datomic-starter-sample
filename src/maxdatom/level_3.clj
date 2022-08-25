@@ -1,7 +1,7 @@
 (ns maxdatom.level-3
   "See https://max-datom.com/#/D33F1C24-7FE1-417D-880B-71EE4450917E"
   (:require
-   [max-datom.connections :refer [db]]
+   [maxdatom.connections :refer [db]]
    [datomic.api :as d]))
 
 (comment

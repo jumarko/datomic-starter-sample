@@ -4,7 +4,7 @@
   (:require
    [clojure.edn :as edn]
    [datomic.api :as d]
-   [max-datom.connections :refer [conn db]]))
+   [maxdatom.connections :refer [conn db]]))
 
 ;;; In Datomic queries, the most restrictive clauses should come first.
 ;;; This greatly improves performance and reduces the amount of work

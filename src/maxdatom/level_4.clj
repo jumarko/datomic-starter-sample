@@ -2,7 +2,7 @@
   "Unification.
   See https://max-datom.com/#/4C495D7B-C678-4057-9EB4-1BD8F57A15AC"
   (:require
-   [max-datom.connections :refer [db]]
+   [maxdatom.connections :refer [db]]
    [datomic.api :as d]))
 
 (comment
